@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sbl_test/models/profile_response.dart';
 import 'package:sbl_test/pages/home_page/home_interface.dart';
+import 'package:sbl_test/pages/page1.dart';
 import 'package:sbl_test/views/profile_view.dart';
 
 import 'home_presenter.dart';
@@ -28,9 +29,15 @@ class _HomePageState extends State<HomePage> implements HomeInterface {
         actions: [
           IconButton(
               onPressed: () {
-                _presenter?.getProfile(_loading);
+                //_presenter?.getProfile(_loading);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    settings: RouteSettings(name: "/page1"),
+                    builder: (context) => Page1View(title: "Page 1"),
+                  ),
+                );
               },
-              icon: const Icon(Icons.refresh))
+              icon: const Icon(Icons.navigate_next))
         ],
       ),
       body: !_loading

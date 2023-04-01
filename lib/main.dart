@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sbl_test/pages/home_page/home_page.dart';
+import 'package:sbl_test/pages/page1.dart';
 
 void main() {
   runApp(const MyApp());
