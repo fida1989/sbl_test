@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:sbl_test/models/person.dart';
 import 'package:sbl_test/pages/home_page/home_page.dart';
-import 'package:sbl_test/pages/page1.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(PersonAdapter());
   runApp(const MyApp());
 }
 
